@@ -59,18 +59,18 @@ aws dms stop-replication-task --replication-task-arn arn:aws:dms:eu-west-1:19708
 aws dms stop-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:7OZFRXSRNCUIHCP3RSQVOOSBJI --region eu-west-1
 
 # contact_vs_account
-aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:ADKA5ZLFH3CJMGOTMUFAHOQGRY --region eu-west-1
+aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:ADKA5ZLFH3CJMGOTMUFAHOQGRY --region eu-west-1 --start-replication-task-type
 # all tables
-aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:7A7RTC52BROA7VQAVKQMA73MVQ --region eu-west-1
+aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:7A7RTC52BROA7VQAVKQMA73MVQ --region eu-west-1 --start-replication-task-type
 # performancegraphportfolio 100k
-aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:442SE7ANBHMC5QQ6DNVG6IQ7EI --region eu-west-1
+aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:442SE7ANBHMC5QQ6DNVG6IQ7EI --region eu-west-1 --start-replication-task-type resume-processing
 # performancegraphportfolio 200k
-aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:QT5YSG23HA4ILIU56ZPFZA3BQM --region eu-west-1
+aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:QT5YSG23HA4ILIU56ZPFZA3BQM --region eu-west-1 --start-replication-task-type resume-processing
 # performancegraphportfolio 300k
-aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:RKAJRHD64OG3KQUS26V7YTNDZY --region eu-west-1
+aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:RKAJRHD64OG3KQUS26V7YTNDZY --region eu-west-1 --start-replication-task-type resume-processing
 # performancegraphportfolio 400k
-aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:V6TXCJXTMZ34M6FVUTU5QZWKKM --region eu-west-1
+aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:V6TXCJXTMZ34M6FVUTU5QZWKKM --region eu-west-1 --start-replication-task-type resume-processing
 # performancegraphportfolio 500k
-aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:U3SZ5WLY7NUHOQZXWGN6W7GDQY --region eu-west-1
+aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:U3SZ5WLY7NUHOQZXWGN6W7GDQY --region eu-west-1 --start-replication-task-type resume-processing
 # performancegraphportfolio 500k+
-aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:7OZFRXSRNCUIHCP3RSQVOOSBJI --region eu-west-1
+aws dms start-replication-task --replication-task-arn arn:aws:dms:eu-west-1:197082791059:task:7OZFRXSRNCUIHCP3RSQVOOSBJI --region eu-west-1 --start-replication-task-type resume-processing

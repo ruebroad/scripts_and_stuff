@@ -10,3 +10,5 @@ else
   virtualenv $1 --python=python3
   source $1/bin/activate
 fi
+
+pip3 install -r requirements.txt

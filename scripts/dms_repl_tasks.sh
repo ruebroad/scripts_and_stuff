@@ -43,26 +43,23 @@ for arn in $task_arns; do
   repl_task=$(aws dms describe-replication-tasks --without-settings --region eu-west-1 --filter Name=replication-task-arn,Values="$arn" --query "ReplicationTasks[*].ReplicationTaskIdentifier" | jq -r '.[]')
   if [ $ACTION == "stop" ]; then
     echo "Stopping Task $arn for $repl_task"
-    #aws dms stop-replication-task --replication-task-arn $arn --region eu-west-1
+    aws dms stop-replication-task --replication-task-arn $arn --region eu-west-1
   fi
 
   if [ $ACTION == "start" ]; then
     # Performance Graph replication tasks
     if [[ $repl_task == performance* ]]; then
       RELOAD_OPTION=$RELOAD_OPTION_PERFGRAPH
-      echo "$RELOAD_OPTION Task $arn for $repl_task"
     # Contact_vs_account replication task
     elif [[ $repl_task == contactvsaccount* ]]; then
       RELOAD_OPTION=$RELOAD_OPTION_C_VS_A
-      echo "$RELOAD_OPTION Task $arn for $repl_task"
     # Contact replication tasks
     elif [[ $repl_task == contactrepl* ]]; then
       RELOAD_OPTION=$RELOAD_OPTION_CONTACT
-      echo "$RELOAD_OPTION Task $arn for $repl_task"
     # Contact replication tasks
     elif [[ $repl_task == datelake* ]]; then
       RELOAD_OPTION=$RELOAD_OPTION_DATALAKE
-      echo "$RELOAD_OPTION Task $arn for $repl_task"
+      
     else
       echo "Unexpected replication task name"
       echo "Task arn: $arn"
@@ -70,6 +67,7 @@ for arn in $task_arns; do
       exit 1
     fi
     # Start the replication task
+    echo "$RELOAD_OPTION Task $arn for $repl_task"
     # aws dms start-replication-task --replication-task-arn $arn --region eu-west-1 --start-replication-task-type $RELOAD_OPTION
   fi
 done
